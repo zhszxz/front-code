@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      display: grid;
+      overflow: hidden;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+      gap: 20px;
+      max-width: 1760px;
+      min-width: 1000px;
+      height: 900px;
+      margin: 100px auto;
+      border-radius: 20px;
+      /* grid布局元素排列方式
+      row(默认): 行优先，从左到右，从上到下
+      column: 列优先，从上到下，从左到右
+      */
+      grid-auto-flow: column;
+    }
+
+    .box .item {
+      background-color: pink;
+    }
+
+    .box .item:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .box .item:nth-child(3) {
+      grid-column: 2 / 4;
+      grid-row: 2 / 3;
+    }
+
+    .box .item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      /* 图片缩放方式
+      fill: 拉伸图片填满容器，可能导致变形
+      contain: 图片等比例缩放，确保图片完整显示，容器可能留有空白
+      cover: 图片等比例缩放，确保容器完全覆盖，图片可能被裁剪
+      */
+      object-fit: cover;
+      /* 图片在容器的位置
+      center: 图片居中显示
+      top: 图片顶部显示
+      bottom: 图片底部显示
+      left: 图片左侧显示
+      right: 图片右侧显示
+      */
+      object-position: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="item">
+      <img src="./img/tree1.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="./img/tree2.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="./img/tree3.jpg" alt="">
+    </div>
+    <div class="item">
+      <img src="./img/tree4.jpg" alt="">
+    </div>
+
+  </div>
+</body>
+
+</html>

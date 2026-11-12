@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盒子综合案例-淘宝侧边栏</title>
+  <link rel="stylesheet" href="./iconfont1/iconfont.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      color: #1f1f1f;
+      /* 取消下划线 */
+      text-decoration: none;
+    }
+
+    ol,
+    ul {
+      /* 取消列表的小圆点 */
+      list-style: none;
+    }
+
+    .service {
+      width: 256px;
+      height: 400px;
+      background-color: #f7f7f7;
+      border-radius: 12px;
+      margin: 100px auto;
+    }
+
+    .service-title {
+      line-height: 32px;
+      padding: 8px 0 0 16px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1f1f1f;
+    }
+
+    .service-title img {
+      width: 60px;
+      height: 20px;
+      margin-left: 4px;
+    }
+
+    .service-bd li {
+      height: 32px;
+      line-height: 32px;
+      /* background-color: pink; */
+      margin: 0 8px;
+      border-radius: 4px;
+      transition: all .5s;
+      padding-left: 10px;
+    }
+
+    .service-bd li:first-child,
+    .service-bd li:first-child a {
+      color: #ff5000;
+    }
+
+    .service-bd li i {
+      margin-right: 4px;
+    }
+
+    .service-bd li:hover {
+      background-color: #fff;
+    }
+
+    .service-bd li a {
+      font-size: 14px;
+    }
+
+    .service-bd li a:hover {
+      color: #ff5000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="service">
+    <div class="service-title">
+      <span>分类</span>
+      <img src="./img/888.gif" alt="">
+    </div>
+    <!-- 主体 -->
+    <ul class="service-bd">
+      <li>
+        <i class="iconfont icon-huore"></i>
+        <a href="#">开学换新立减千元</a>
+        <a href="#">抢大额券</a>
+      </li>
+      <li>
+        <i class="iconfont icon-diannao"></i>
+        <a href="#">电脑</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">配件</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">办公</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">文具</a>
+      </li>
+      <li>
+        <i class="iconfont icon-diannao"></i>
+        <a href="#">家电</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">手机</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">通信</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">数码</a>
+      </li>
+      <li>
+        <i class="iconfont icon-diannao"></i>
+        <a href="#">工业</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">商业</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">农业</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">定制</a>
+      </li>
+      <li>
+        <i class="iconfont icon-diannao"></i>
+        <a href="#">家具</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">家装</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">家居</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">厨具</a>
+      </li>
+      <li>
+        <i class="iconfont icon-diannao"></i>
+        <a href="#">女装</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">男装</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">运动</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">户外</a>
+      </li>
+      <li>
+        <i class="iconfont icon-diannao"></i>
+        <a href="#">汽车</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">珠宝</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">文玩</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">箱包</a>
+      </li>
+      <li>
+        <i class="iconfont icon-diannao"></i>
+        <a href="#">食品</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">鲜花</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">酒水</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">健康</a>
+      </li>
+      <li>
+        <i class="iconfont icon-diannao"></i>
+        <a href="#">母婴</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">童装</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">玩具</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">宠物</a>
+      </li>
+      <li>
+        <i class="iconfont icon-diannao"></i>
+        <a href="#">美妆</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">个护</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">娱乐</a>
+        <i class="iconfont icon-xiexian"></i>
+        <a href="#">图书</a>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

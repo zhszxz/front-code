@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 创建当前日期时间对象
+    const now = new Date();
+    console.log(now);
+
+    //创建指定日期时间对象
+    new Date("2026-09-29");                    // 字符串
+    new Date("2026/09/29 12:30:00");
+    new Date(2026, 8, 29);                     // 年, 月(0-11), 日
+    new Date(2026, 8, 29, 12, 30, 0);          // 年月日时分秒
+    new Date(1759123456789);                   // 时间戳（毫秒）
+
+    //获取时间信息
+    let d = new Date();
+
+    console.log(d.getFullYear());      // 年
+    console.log(d.getMonth());         // 月，0-11
+    console.log(d.getDate());          // 日，1-31
+    console.log(d.getDay());           // 星期，0-6（0 是周日）
+    console.log(d.getHours());         // 时，0-23
+    console.log(d.getMinutes());       // 分，0-59
+    console.log(d.getSeconds());       // 秒，0-59
+    console.log(d.getMilliseconds());  // 毫秒，0-999
+
+    console.log(d.getTime());          // 时间戳（毫秒）
+
+    // 格式化方法
+    console.log(d.toString());          // "Mon Sep 29 2026 12:30:00 GMT+0800"
+    console.log(d.toDateString());      // "Mon Sep 29 2026"
+    console.log(d.toTimeString());      // "12:30:00 GMT+0800"
+    console.log(d.toLocaleString());    // "2026/9/29 12:30:00"（本地格式）
+    console.log(d.toLocaleDateString());// "2026/9/29"
+    console.log(d.toLocaleTimeString());// "12:30:00"
+
+    // 时间戳于日期转换
+    // 日期 → 时间戳
+    const ts = new Date().getTime();
+    const ts2 = Date.now();
+    const ts3 = +new Date();     // 隐式转换
+    // 时间戳 → 日期
+    d = new Date(1759123456789);
+
+    // 时间计算
+    const d1 = new Date("2026-09-29");
+    const d2 = new Date("2026-10-01");
+
+    const diff = d2 - d1;              // 毫秒
+    const days = diff / 1000 / 60 / 60 / 24; // 天数
+    console.log(days); // 2
+  </script>
+</body>
+
+</html>

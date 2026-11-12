@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 数组的创建方式
+
+    // 字面量方式（推荐）
+    let arr1 = [1, 2, 3];
+    console.log(arr1) // [1,2,3]
+
+    // 构造函数方式
+    let arr2 = new Array(1, 2, 3);
+    console.log(arr2) // [1,2,3]
+    let arr3 = new Array(5);        // 创建长度为5的空数组
+    console.log(arr3) // [ <5 empty items> ]
+    let arr4 = Array.of(5);         // [5]，避免上面的坑
+    console.log(arr4) // [5]
+    let arr5 = Array.from('hello'); // ['h','e','l','l','o']
+    console.log(arr5) // ['h','e','l','l','o']
+  </script>
+</body>
+
+</html>

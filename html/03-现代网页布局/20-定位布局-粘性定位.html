@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定位布局-粘性定位</title>
+  <style>
+    /* 粘性定位
+    兼具相对定位和固定定位的特点
+    元素在滚动到指定位置前为相对定位，之后转为固定定位
+    父容器 overflow 必须为 visible
+    需要制定方位名词才生效
+    */
+    .nav {
+      position: sticky;
+      top: 0;
+      width: 1000px;
+      height: 100px;
+      background-color: pink;
+      margin: 100px auto;
+    }
+
+    .main {
+      height: 2000px;
+      background-color: skyblue
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">我是导航部分</nav>
+  <main class="main"></main>
+</body>
+
+</html>

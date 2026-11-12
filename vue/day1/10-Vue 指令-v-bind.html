@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+    v-bind 指令 : 用于动态设置标签属性
+    语法： 
+      v-bind:属性名="表达式"
+      简写：
+      :属性名="表达式"
+  -->
+  <div id="app">
+    <img v-bind:src="imgUrl">
+    <img :src="imgUrl">
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        imgUrl: './imgs/10-02.png'
+      }
+    })
+
+  </script>
+</body>
+
+</html>

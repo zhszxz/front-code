@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+    v-on 指令用于绑定事件 
+    语法： v-on:事件名="methods中的函数名" 
+  -->
+  <div id="app">
+    <button @click="toggleShow">切换显示隐藏</button>
+    <h1 v-show="show">黑马程序员</h1>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        show: true
+      },
+      // methods 中定义的函数可以用于处理事件
+      methods: {
+        toggleShow() {
+          // data 中的变量会绑定到 vue 实例上
+          // app.show = !app.show
+
+          // methods 中提供的函数中的 this 指向 vue 实例，因此可以采用如下写法
+          this.show = !this.show
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

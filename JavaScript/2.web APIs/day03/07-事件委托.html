@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>第1个孩子</li>
+    <li>第2个孩子</li>
+    <li>第3个孩子</li>
+    <li>第4个孩子</li>
+    <li>第5个孩子</li>
+    <p>我不需要变色</p>
+  </ul>
+  <script>
+    // 事件委托： 将事件监听添加给父元素，子元素事件触发时利用冒泡触发父元素事件，从而减少注册事件监听次数
+    const ul = document.querySelector('ul')
+    ul.addEventListener('click', function (e) {
+      console.dir(e)
+      // e.target 是点击的那个对象
+      console.dir(e.target)
+      if (e.target.tagName === 'LI') {
+        e.target.style.color = 'red'
+      }
+    })
+  </script>
+</body>
+
+</html>

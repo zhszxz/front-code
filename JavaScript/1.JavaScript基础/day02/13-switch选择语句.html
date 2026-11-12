@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    switch (2) {
+      case 1:
+        console.log('您选择的是1')
+        break  // 退出switch
+      case 2:
+        console.log('您选择的是2')
+        break  // 退出switch
+      case 3:
+        console.log('您选择的是3')
+        break  // 退出switch
+      default:
+        console.log('没有符合条件的')
+    }
+
+    // case合并
+    let day = +prompt('请输入星期几')
+    let result;
+    switch (day) {
+      case 1:
+      case 2:
+      case 3:
+        result = '工作日';
+        break;
+      case 6:
+      case 7:
+        result = '周末';
+        break;
+      default:
+        result = '未知';
+    }
+  </script>
+</body>
+
+</html>

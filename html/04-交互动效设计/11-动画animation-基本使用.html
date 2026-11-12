@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动画animation-基本使用</title>
+  <style>
+    /* 1. 定义动画 */
+    @keyframes move1 {
+
+      /* 开始状态 */
+      from {
+        transform: translate(0, 0);
+      }
+
+      /* 结束状态 */
+      to {
+        transform: translate(300px, 600px);
+        border-radius: 50%;
+      }
+    }
+
+    /* 动画可以定义多个关键帧 */
+    @keyframes move2 {
+
+      /* 相当于from */
+      0% {
+        transform: translate(0, 0);
+      }
+
+      25% {
+        transform: translate(300px, 0px);
+      }
+
+      50% {
+        transform: translate(300px, 600px);
+      }
+
+      75% {
+        transform: translate(0, 600px);
+      }
+
+      100% {
+        transform: translate(0, 0);
+      }
+
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+      /* 2. 使用动画 */
+      animation: move1 4s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

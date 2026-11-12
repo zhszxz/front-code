@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>属性选择器</title>
+  <style>
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    /* 选择具有特定属性的元素 */
+    a[class] {
+      color: red;
+    }
+
+    /* 选择具有特定属性值的元素 */
+    a[class="font"] {
+      color: green;
+    }
+
+    /* 选择属性值以xx开头的元素 */
+    a[class^="font"] {
+      color: blue;
+    }
+
+    /* 选择属性值以xx结尾的元素 */
+    a[class$="14"] {
+      color: pink;
+    }
+
+    /* 选择属性值包含xx的元素 */
+    a[class*="font"] {
+      color: yellow;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      /* 去掉轮廓线 */
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#">修改文字颜色</a> <br>
+  <a href="#" class="font">修改文字颜色</a> <br>
+  <a href="#" class="font14">修改文字颜色</a> <br>
+  <a href="#" class="font16">修改文字颜色</a> <br>
+  <a href="#" class="red">修改文字颜色</a> <br>
+
+  <input type="text">
+  <input type="password">
+  <input type="checkbox">
+  <input type="radio">
+</body>
+
+</html>

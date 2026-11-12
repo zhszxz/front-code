@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定位布局-固定定位</title>
+  <style>
+    /* 固定定位
+      元素脱离正常流，不占据空间
+      永远相对浏览器视口，滚动时不会移动
+    */
+    .box {
+      width: 600px;
+      height: 120px;
+      background-color: pink;
+      position: fixed;
+      left: 50%;
+      margin-left: -300px;
+      bottom: 30px;
+      /* margin: 0 auto; 对于定位的盒子无效 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+</body>
+
+</html>

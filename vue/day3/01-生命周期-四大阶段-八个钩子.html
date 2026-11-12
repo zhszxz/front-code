@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- vue 生命周期 ： 创建阶段 -》 挂载阶段 -》 更新阶段 -》 销毁阶段，每个阶段前后对应一个钩子函数 -->
+  <div id="app">
+    <h3>{{ title }}</h3>
+    <div>
+      <button @click="count--">-</button>
+      <span>{{ count }}</span>
+      <button @click="count++">+</button>
+    </div>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        count: 100,
+        title: '计数器'
+      },
+      // 创建阶段
+      beforeCreate() {
+        // 此时无法访问响应式数据
+        console.log('beforeCreate', this.count);
+      },
+      created() {
+        // 此时可以发送初始化请求
+        console.log('created', this.count);
+      },
+      // 挂载阶段
+      beforeMount() {
+        console.log('beforeMount');
+      },
+      mounted() {
+        // 此时可以访问DOM元素
+        console.log('mounted');
+      },
+      // 更新阶段
+      beforeUpdate() {
+        console.log('beforeUpdate');
+      },
+      updated() {
+        console.log('updated');
+      },
+      // 销毁阶段
+      beforeDestroy() {
+        console.log('beforeDestroy');
+      },
+      destroyed() {
+        console.log('destroyed');
+      }
+    })
+  </script>
+</body>
+
+</html>

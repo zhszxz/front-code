@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表单标签</title>
+</head>
+
+<body>
+  <!-- 表单容器，主要作用是包裹所有的表单控件 -->
+  <form action="">
+    <ul>
+      <li>
+        <label>
+          账号： <input type="text" placeholder="请输入账号" name="username" autocomplete="off">
+        </label>
+      </li>
+      <li>
+        <label>
+          密码： <input type="password" placeholder="请输入密码" name="pwd" maxlength="6">
+        </label>
+      </li>
+      <!-- 2. 单选框 复选框和文件域 -->
+      <li>
+        性别：
+        <label>
+          <input type="radio" name="gender" value="1" checked> 男
+        </label>
+        <label>
+          <input type="radio" name="gender" value="0"> 女
+        </label>
+      </li>
+      <li>
+        爱好：
+        <label for="">
+          <input type="checkbox" name="hobby" value="0">足球
+        </label>
+        <label for="">
+          <input type="checkbox" name="hobby" value="1">篮球
+        </label>
+        <label for="">
+          <input type="checkbox" name="hobby" value="2">双色球
+        </label>
+      </li>
+      <li>
+        头像：
+        <input type="file" name="file" multiple accept=".jpg,.png">
+      </li>
+      <!-- 文本域 下拉列表和button按钮 -->
+      <li>
+        <label for="">
+          留言：
+          <textarea name="msg" cols="30" rows="3" placeholder="请输入留言"></textarea>
+        </label>
+      </li>
+      <li>
+        城市：
+        <select name="city" id="">
+          <option value="bj">北京</option>
+          <option value="sh" selected>上海</option>
+          <option value="gz">广州</option>
+          <option value="sz">深圳</option>
+        </select>
+      </li>
+      <li>
+        <button>提交</button>
+      </li>
+    </ul>
+  </form>
+</body>
+
+</html>

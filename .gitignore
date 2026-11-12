@@ -1,0 +1,25 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+build/
+.deploy_git/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+
+# 环境变量
+.env
+.env.local
+
+# 编辑器
+.idea/
+.vscode/
+
+# 缓存
+*.cache

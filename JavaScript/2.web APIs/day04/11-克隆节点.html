@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    const ul = document.querySelector('ul')
+    // 克隆节点 元素.cloneNode(布尔) true 递归克隆子节点 false 只克隆当前节点
+    const newNode = ul.children[ul.children.length - 1].cloneNode(true)
+    ul.appendChild(newNode)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.函数的定义与调用
+    function add(a, b) {
+      return a + b;
+    }
+    console.log(add(1, 2));  // 3
+
+    // 2.函数参数可以有默认值
+    function greet(name = "World") {
+      return `Hello, ${name}`;
+    }
+    console.log(greet());        // "Hello, World"
+
+    // 3.可变参数
+    // arguments（ES5 传统方式）
+    function sum() {
+      let total = 0;
+      // arguments 是一个类数组对象,不是真数组，使用不便
+      for (let i = 0; i < arguments.length; i++) {
+        total += arguments[i];
+      }
+      return total;
+    }
+    console.log(sum(1, 2, 3, 4));  // 10
+
+    // 剩余参数 ...rest（ES6 推荐）
+    function sum(...nums) {
+      // ... 将剩余参数收集为真数组
+      return nums.reduce(function (acc, cur) {
+        return acc + cur;
+      }, 0);
+    }
+    console.log(sum(1, 2, 3, 4));  // 10
+
+    // 4.参数解构
+    function print({ name, age }) { // 接受一个对象作为参数，直接把 name,age 属性解构为同名局部变量
+      console.log(name, age);
+    }
+    print({ name: "Tom", age: 18 });  // Tom 18
+
+    // 5.箭头函数
+    const add2 = (a, b) => a + b;
+    const add3 = (a, b) => { return a + b; };
+    const double = x => x * 2;
+    const hello = () => "hi";
+
+    // 6.闭包
+    function makeCounter() {
+      let count = 0;                  // 外层变量
+      return function () {             // 内层函数"捕获"了 count
+        count++;
+        return count;
+      };
+    }
+    const counter = makeCounter();
+    console.log(counter());  // 1
+    console.log(counter());  // 2
+    console.log(counter());  // 3
+
+  </script>
+</body>
+
+</html>

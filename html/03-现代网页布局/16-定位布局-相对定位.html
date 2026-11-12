@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>定位布局-相对定位</title>
+  <style>
+    .box1 {
+      /* 相对定位
+      相对于自己的原始位置移动
+      不脱离正常流，原位置仍被保留,不影响其他元素的布局
+      同时设置top bottom，top优先级高
+      同时设置left right，left优先级高
+      */
+      position: relative;
+      top: 100px;
+      /* bottom: 50px; */
+      left: 100px;
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .box2 {
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+</body>
+
+</html>

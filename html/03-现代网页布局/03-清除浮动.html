@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>清除浮动</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      /* 解决方式4: 父元素添加overflow属性 */
+      overflow: hidden;
+      width: 300px;
+      border: 1px solid red;
+      margin: 0 auto;
+    }
+
+    .main .son1 {
+      /* 浮动的问题: 子元素会脱离文档流，导致父元素高度塌陷 */
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+    }
+
+    .main .son2 {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+    }
+
+    .footer {
+      width: 500px;
+      height: 100px;
+      background-color: black;
+      margin: 0 auto;
+    }
+
+    /* .clear {
+      clear: both;
+    } */
+
+    /* 解决方式2: 父元素添加伪元素, 清除浮动 */
+    /* .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    } */
+
+    /* 解决方式3: 父元素添加双伪元素, 清除浮动 */
+    /* .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .clearfix::before {
+      content: "";
+      display: block;
+      clear: both;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="main clearfix">
+    <div class="son1"></div>
+    <div class="son2"></div>
+    <!-- 解决方式1: 新增额外标签, 清除浮动 -->
+    <!-- <div class="clear"></div> -->
+  </div>
+  <div class="footer"></div>
+</body>
+
+</html>

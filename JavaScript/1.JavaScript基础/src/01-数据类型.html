@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // js数据类型
+
+    // Number  数值类型
+    123; // 整数123
+    0.456; // 浮点数0.456
+    1.2345e3; // 科学计数法表示1.2345x1000，等同于1234.5
+    -99; // 负数
+    NaN; // NaN表示Not a Number，当无法计算结果时用NaN表示
+    Infinity; // Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就表示为Infinity
+
+    // String  字符串类型
+    'abc'
+    "xyz"
+
+    // Boolean  布尔类型
+    true; // 这是一个true值
+    false; // 这是一个false值
+    2 > 1; // 这是一个true值
+    2 >= 3; // 这是一个false值
+
+    // BigInt 大整数类型
+    // 使用BigInt:
+    var bi1 = 9223372036854775807n;
+    var bi2 = BigInt(12345);
+    var bi3 = BigInt("0x7fffffffffffffff");
+    console.log(bi1 === bi2); // false
+    console.log(bi1 === bi3); // true
+    console.log(bi1 + bi2);
+
+    // 数组
+    [1, 2, 3.14, 'Hello', null, true];
+
+    // 对象
+    let person = {
+      name: 'Bob',
+      age: 20,
+      tags: ['js', 'web', 'mobile'],
+      city: 'Beijing',
+      hasCar: true,
+      zipcode: null
+    };
+  </script>
+</body>
+
+</html>

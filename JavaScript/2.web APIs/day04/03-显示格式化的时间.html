@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 40px;
+      border: 1px solid pink;
+      text-align: center;
+      line-height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    // 手动格式化日期时间案例
+    function formatDate() {
+      const date = new Date()
+
+      const year = date.getFullYear()
+      // padStart(2, '0') 表示前补 0 ，直到长度为 2
+      const month = String(date.getMonth() + 1).padStart(2, '0')
+      const day = String(date.getDate()).padStart(2, '0')
+      const hour = String(date.getHours()).padStart(2, '0')
+      const minute = String(date.getMinutes()).padStart(2, '0')
+      const second = String(date.getSeconds()).padStart(2, '0')
+
+      return `${year}-${month}-${day} ${hour}:${minute}:${second}`
+    }
+
+    const div = document.querySelector('div')
+    div.innerHTML = formatDate()
+    setInterval(() => {
+      div.innerHTML = formatDate()
+    }, 1000)
+
+  </script>
+</body>
+
+</html>

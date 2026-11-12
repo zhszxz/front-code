@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D变化-透视效果</title>
+  <style>
+    /* 给父元素添加透视效果
+    数值越小，表示观察者离得越近，透视效果越明显
+    */
+    /* body {
+      perspective: 500px;
+    } */
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 230px;
+      transition: all .3s;
+    }
+
+    .ldhy {
+      /* 透视写在子元素上，必须位于transform第一个位置 */
+      transform: perspective(500px) rotateY(40deg);
+    }
+
+    .ldhx:hover {
+      transform: rotateX(40deg);
+    }
+  </style>
+</head>
+
+<body>
+  <img src="./img/ldhx.png" alt="" class="ldhx">
+  <br>
+  <img src="./img/ldhy.jpg" alt="" class="ldhy">
+  <br>
+  <img src="./img/ldhz.webp" alt="" class="ldhz">
+</body>
+
+</html>

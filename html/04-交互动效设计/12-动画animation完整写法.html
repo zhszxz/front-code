@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>动画animation-完整写法</title>
+  <style>
+    body {
+      background-color: #000;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: pink;
+
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes scrollTip {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(15px);
+      }
+    }
+
+    .circle {
+      /* animation: 动画名称 动画时长 速度曲线 延迟时间 播放次数 播放方向 执行完毕状态; */
+      /*
+        1. animation-name 动画名称
+           - 取值：@keyframes 定义的名称，如 rotate
+
+        2. animation-duration 动画时长（默认 0s，不写则动画无效）
+           - 取值：2s / 500ms
+
+        3. animation-timing-function 速度曲线（默认 ease）
+           - linear：匀速
+           - ease：先慢后快再慢（默认值）
+           - ease-in：慢速开始，越来越快
+           - ease-out：快速开始，越来越慢
+           - ease-in-out：慢速开始和结束，中间快
+           - steps(n)：分 n 步瞬间跳变完成（常见于逐帧动画，如 steps(10)）
+           - cubic-bezier(x1, y1, x2, y2)：自定义贝塞尔曲线
+
+        4. animation-delay 延迟时间（默认 0s）
+           - 取值：1s / 500ms；负值表示动画提前开始（跳过前面片段）
+
+        5. animation-iteration-count 播放次数（默认 1）
+           - 取值：数字 2 / 3...；infinite 表示无限循环
+
+        6. animation-direction 播放方向（默认 normal）
+           - normal：正常播放
+           - reverse：反向播放
+           - alternate：交替播放（奇数次正向、偶数次反向）
+           - alternate-reverse：反向交替（奇数次反向、偶数次正向）
+
+        7. animation-fill-mode 执行完毕状态（默认 none）
+           - none：回到初始状态（默认）
+           - forwards：保持动画最后一帧的状态（结束停留）
+           - backwards：在延迟等待期间应用第一帧的状态
+           - both：同时具有 forwards 和 backwards 的效果
+      */
+      animation: rotate 2s linear 0s infinite normal forwards;
+    }
+
+    .circle:hover {
+      animation-play-state: paused;
+    }
+
+    .scrollTip {
+      animation: scrollTip 1s linear infinite alternate;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <img src="./img/circle.png" alt="" class="circle">
+  <img src="./img/scrollTip.png" alt="" class="scrollTip">
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Map：有序不重复的键值对集合
+    // 初始化Map需要一个二维数组
+    let m = new Map([['Michael', 95], ['Bob', 75], ['Tracy', 85]]);
+    alert(m.get('Michael')); // 95
+
+    // map 的常用方法
+    map = new Map();
+
+    // 增 / 改
+    map.set('name', 'Tom');
+    map.set('age', 18);
+
+    // 查
+    map.get('name');      // 'Tom'
+    map.get('unknown');   // undefined
+
+    // 判断存在
+    map.has('name');      // true
+    map.has('xxx');       // false
+
+    // 删
+    map.delete('age');    // true（删除成功）
+    map.delete('xxx');    // false（不存在）
+
+    // 清空
+    map.clear();
+
+    // 长度
+    map.size;             // 0\
+
+
+
+
+    // Set：有序不重复的键集合
+    // 创建Set需要提供Array作为输入，或创建空Set
+    let s1 = new Set(); // 空Set
+    let s2 = new Set([1, 2, 3]); // 含1, 2, 3
+
+    // 重复元素在Set中自动被过滤
+    let s = new Set([1, 2, 3, 3, '3']);
+
+    // Set的常用方法
+    let set = new Set();
+    // 增
+    set.add(1);
+    set.add(2);
+    set.add(2);   // 无效，已存在
+
+    // 查
+    set.has(1);   // true
+    set.has(3);   // false
+
+    // 删
+    set.delete(1);   // true（删除成功）
+    set.delete(99);  // false（不存在）
+
+    // 清空
+    set.clear();
+
+    // 长度
+    set.size;        // 0
+
+
+
+
+  </script>
+</body>
+
+</html>

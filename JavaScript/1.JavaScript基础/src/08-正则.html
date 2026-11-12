@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.创建正则表达式
+    // 方式一：字面量 /正则串/修饰符（可选）
+    let re = /abc/gi;
+    // 方式二：构造函数 new RegExp(正则串, 修饰符)
+    re = new RegExp("abc", "gi");
+
+
+    // 2.修饰符
+    // g：全局匹配
+    // i：忽略大小写
+    // m：多行匹配
+    // s：单行匹配，匹配换行符
+    // u： Unicode 模式
+    // y：粘性匹配，从当前匹配位置开始匹配
+    re = /abc/gimsuy;
+
+
+    // 3.正则对象方法
+    //3.1 test 返回是否匹配布尔值
+    console.log(/\d+/.test("abc123")); // true
+    console.log(/\d+/.test("abc"));    // false
+
+    //3.2 exec 返回匹配结果整体和捕获组的数组
+    re = /(\d+)-(\d+)/;
+    let result = re.exec("10-20");
+
+    console.log(result[0]);  // "10-20"
+    console.log(result[1]);  // "10"
+    console.log(result[2]);  // "20"
+    console.log(result.index); // 0 ，匹配结果整在原文的起始位置
+
+
+    // 4.字符串正则方法
+    // 4.1 match 返回匹配结果数组
+    console.log("a1 b2 c3".match(/\d+/g));   // ["1", "2", "3"]
+    console.log("a1 b2".match(/\d+/));       // ["1", index: 1, ...]
+
+    // 4.2 matchAll 返回匹配结果迭代器
+    re = /\d+/g;
+    for (const m of "a1 b2 c3".matchAll(re)) {
+      console.log(m[0], m.index);
+    }
+
+    // 4.3 replace 返回替换后的字符串
+    console.log("2026-09-29".replace(/-/g, "/"));  // "2026/09/29"
+
+    // 4.4 split 正则切分
+    console.log("a1b2c3".split(/\d/)); // ["a", "b", "c", ""]
+
+
+    // 5.分组
+    // 捕获分组 ()
+    re = /(\d{4})-(\d{2})-(\d{2})/;
+    result = re.exec("2026-09-29");
+
+    console.log(result[0]); // "2026-09-29"  整个匹配
+    console.log(result[1]); // "2026"        第 1 个分组
+    console.log(result[2]); // "09"          第 2 个分组
+    console.log(result[3]); // "29"          第 3 个分组
+
+    // 引用分组 \分组号
+    re = /\b(\w+)\s+\1\b/;
+    re.test("hello hello"); // true
+    re.test("hello world"); // false
+
+    // 非捕获分组 （?:）
+    // 捕获分组：result 有 2 个分组
+    console.log(/(ab)(cd)/.exec("abcd")); // ["abcd", "ab", "cd"]
+
+    // 非捕获分组：result 只有 0 项
+    console.log(/(?:ab)(cd)/.exec("abcd")); // ["abcd", "cd"]
+  </script>
+</body>
+
+</html>

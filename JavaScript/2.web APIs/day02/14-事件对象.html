@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text">
+  <script>
+    const input = document.querySelector('input')
+    // 事件对象：回调函数的第一个参数
+    input.addEventListener('keyup', function (ev) {
+      console.log(ev.key)// 获取用户按下的键位
+      if (ev.key === 'Enter') {
+        console.log('我按下了回车键')
+      }
+    })
+  </script>
+</body>
+
+</html>

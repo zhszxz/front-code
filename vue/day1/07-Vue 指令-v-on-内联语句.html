@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+    v-on 指令用于绑定事件 
+    语法： v-on:事件名="表达式" 
+          可以用 '@'' 代替 'v-on:' @事件名="表达式"
+  -->
+  <div id="app">
+    <button v-on:click="count--">-</button>
+    <span>{{ count }}</span>
+    <button @click="count++">+</button>
+  </div>
+  <script src="./vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        count: 100
+      }
+    })
+  </script>
+</body>
+
+</html>

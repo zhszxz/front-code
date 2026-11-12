@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- vue指令：vue中以 v- 前缀开头的特殊标签属性，不同指令有特定的功能 -->
+  <div id="app">
+    <!-- 问题：插值表达式不解析标签 -->
+    <!-- {{ msg }} -->
+
+    <!-- 解决：使用 v-html 指令，效果类似 innerHTML -->
+    <div v-html="msg"></div>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: `
+          <a href="http://www.itcast.cn">学it, 来黑马</a>
+        `
+      }
+    })
+
+  </script>
+
+</body>
+
+</html>

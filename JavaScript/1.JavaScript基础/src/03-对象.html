@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // js 的对象是一种无序的集合数据类型，它由若干键值对组成。
+    let xiaoming = {
+      name: '小明',
+      birth: 1990,
+      school: 'No.1 Middle School',
+      height: 1.70,
+      weight: 65,
+      score: null
+    };
+    console.log(xiaoming);
+
+    // 访问对象的属性
+    console.log(xiaoming.name); // '小明'
+    console.log(xiaoming.birth); // 1990
+
+    let xiaohong = {
+      name: '小红',
+      'middle-school': 'No.1 Middle School' // 非法的属性名，必须使用引号括起来
+    };
+    // 访问时必须通过中括号
+    console.log(xiaohong['middle-school']); // 'No.1 Middle School'
+    // 事实上对象的属性名都是字符串
+    console.log(xiaohong['name']); // '小红'
+    console.log(xiaohong.name); // '小红'
+
+
+    // 可以自由地给一个对象添加或删除属性
+    xiaoming = {
+      name: '小明'
+    };
+    console.log(xiaoming.age); // undefined
+    xiaoming.age = 18; // 新增一个age属性
+    console.log(xiaoming.age); // 18
+    delete xiaoming.age; // 删除age属性
+    console.log(xiaoming.age); // undefined
+    delete xiaoming['name']; // 删除name属性
+    console.log(xiaoming.name); // undefined
+    delete xiaoming.school; // 删除不存在的属性也不会报错
+
+    // in 判断对象是否有某个属性
+    xiaoming = {
+      name: '小明',
+      birth: 1990,
+      school: 'No.1 Middle School',
+      height: 1.70,
+      weight: 65,
+      score: null
+    };
+    alert('name' in xiaoming); // true
+    alert('grade' in xiaoming); // false
+    // in 判断属性存在,也可能是继承得到的
+    alert('toString' in xiaoming); // true，toString定义在object对象中
+
+    // hasOwnProperty 判断属性是否是对象自己拥有，而不是继承得到
+    xiaoming = {
+      name: '小明'
+    };
+    alert(xiaoming.hasOwnProperty('name')); // true
+    alert(xiaoming.hasOwnProperty('toString')); // false
+  </script>
+</body>
+
+</html>

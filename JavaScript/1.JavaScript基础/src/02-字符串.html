@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //JavaScript的字符串就是用''或""括起来的字符表示
+    let str1 = 'I\'m \"OK\"!'; // I'm "OK"!
+    console.log(str1);
+
+    // 模板字符串
+    let name = '小明';
+    let age = 20;
+    let message = `你好, ${name}, 你今年${age}岁了!`;
+    alert(message);
+
+    // 字符串的长度
+    let s = 'Hello, world!';
+    console.log(s.length); // 13
+
+    // 字符串的索引
+    console.log(s[0]); // 'H'
+    console.log(s[6]); // ' '
+    console.log(s[7]); // 'w'
+    console.log(s[12]); // '!'
+    console.log(s[13]); // undefined 超出范围的索引不会报错，但一律返回undefined
+
+    // 字符串的不可变性
+    s = 'Test';
+    s[0] = 'X'; // 不报错但不起作用
+    console.log(s); // s仍然为'Test'
+
+    // 字符串常用方法，这些方法不会改变原字符串，而是返回一个新的字符串
+    // toUpperCase 转大写
+    s = 'Hello';
+    alert(s.toUpperCase()); // 返回'HELLO'
+
+    // toLowerCase 转小写
+    alert(s.toLowerCase()); // 返回'hello'
+
+    // indexOf 查找子串
+    s = 'hello, world';
+    alert(s.indexOf('world')); // 返回7
+    alert(s.indexOf('World')); // 没有找到指定的子串，返回-1
+
+    // substring 截取字符串
+    alert(s.substring(0, 5)); // 从索引0开始到5（不包括5），返回'hello'
+    alert(s.substring(7)); // 从索引7开始到结束，返回'world'
+  </script>
+</body>
+
+</html>

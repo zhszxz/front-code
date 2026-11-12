@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+  指令修饰符：通过  . 指明指令后缀，以增强指令的功能
+  常用的修饰符：
+    .enter  →  监听键盘回车事件
+    .trim  →  自动去掉输入框内容的首尾空格字符
+    .number  →  自动将输入框内容转换为数字类型
+    .stop  →  阻止事件冒泡
+    .prevent  →  阻止事件默认行为
+  -->
+  <div id="app">
+    <h3>@keyup.enter → 监听键盘回车事件</h3>
+    <input v-model="username" @keyup.enter="handleSubmit" type="text">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        username: ''
+      },
+      methods: {
+        handleSubmit() {
+          console.log(this.username);
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
