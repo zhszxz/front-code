@@ -23,3 +23,6 @@ Thumbs.db
 
 # 缓存
 *.cache
+
+# npm 缓存目录
+.npm-cache/
